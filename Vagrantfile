@@ -99,6 +99,5 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
 
-  config.vm.provision "shell", path: "shell/fix_authorized_keys.sh"
   config.vm.provision "shell", path: "shell/configure_network.sh"
 end
