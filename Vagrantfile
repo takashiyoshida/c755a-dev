@@ -20,28 +20,16 @@ Vagrant.configure(2) do |config|
     dev.vm.network "private_network", ip: "142.17.10.110", netmask: "255.0.0.0"
   end
 
-  config.vm.define "cms1" do | cms |
+  config.vm.define "test1" do | cms |
     cms.vm.box = "test"
     cms.vm.hostname = "nelscs1a"
     cms.vm.network "private_network", ip: "142.17.10.101", netmask: "255.0.0.0"
   end
 
-  config.vm.define "ats1" do | ats |
+  config.vm.define "test2" do | ats |
     ats.vm.box = "test"
-    ats.vm.hostname = "nelats1a"
-    ats.vm.network "private_network", ip: "142.17.10.103", netmask: "255.0.0.0"
-  end
-
-  config.vm.define "skg1" do | skg |
-    skg.vm.box = "test"
-    skg.vm.hostname = "nelskg1a"
-    skg.vm.network "private_network", ip: "142.13.10.101", netmask: "255.0.0.0"
-  end
-
-  config.vm.define "dcs1" do | dcs |
-    dcs.vm.box = "test"
-    dcs.vm.hostname = "neldcs1a"
-    dcs.vm.network "private_network", ip: "142.17.10.108", netmask: "255.0.0.0"
+    ats.vm.hostname = "nelscs2a"
+    ats.vm.network "private_network", ip: "142.17.10.102", netmask: "255.0.0.0"
   end
 
   # Disable automatic box update checking. If you disable this, then
