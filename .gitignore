@@ -1,4 +1,7 @@
 # Ignore vagrant-related files
 .vagrant
 # Ignore source files under SVN control
+.DS_Store
+pkg
 src
+test
