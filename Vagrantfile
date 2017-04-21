@@ -15,21 +15,23 @@ Vagrant.configure(2) do |config|
   config.vm.box = "dev"
 
   config.vm.define "dev" do | dev |
-    dev.vm.box = "dev"
+    dev.vm.box = "rhel5_dev"
     dev.vm.hostname = "neltrs1a"
     dev.vm.network "private_network", ip: "142.17.10.110", netmask: "255.0.0.0"
   end
 
-  config.vm.define "test1" do | cms |
-    cms.vm.box = "test"
-    cms.vm.hostname = "nelscs1a"
-    cms.vm.network "private_network", ip: "142.17.10.101", netmask: "255.0.0.0"
+  config.vm.define "test1" do | cms1 |
+    cms1.vm.box = "rhel5_test"
+    cms1.vm.hostname = "nelscs1a"
+    cms1.vm.network "private_network", ip: "142.17.10.101", netmask: "255.0.0.0"
+#    cms1.vm.network "private_network", ip: "143.17.10.1", netmask: "255.255.255.0"
   end
 
-  config.vm.define "test2" do | ats |
-    ats.vm.box = "test"
-    ats.vm.hostname = "nelscs2a"
-    ats.vm.network "private_network", ip: "142.17.10.102", netmask: "255.0.0.0"
+  config.vm.define "test2" do | cms2 |
+    cms2.vm.box = "rhel5_test"
+    cms2.vm.hostname = "nelscs2a"
+    cms2.vm.network "private_network", ip: "142.17.10.102", netmask: "255.0.0.0"
+#    cms2.vm.network "private_network", ip: "143.17.10.101", netmask: "255.255.255.0"
   end
 
   # Disable automatic box update checking. If you disable this, then
