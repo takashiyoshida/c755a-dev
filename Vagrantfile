@@ -27,6 +27,14 @@ Vagrant.configure(2) do |config|
 #    cms1.vm.network "private_network", ip: "143.17.10.1", netmask: "255.255.255.0"
   end
 
+  config.vm.define "dbs" do | dbs1 |
+    dbs1.vm.box = "rhel5_db"
+    dbs1.vm.hostname = "neldbs1a"
+    dbs1.vm.network "private_network", ip: "142.17.10.105", netmask: "255.0.0.0"
+    # dbs1.vm.network "private_network", ip: "143.17.10.101", netmask: "255.255.255.0"
+    dbs1.vm.provision "shell", path: "shell/configure_dbs.sh"
+  end
+
   config.vm.define "test2" do | cms2 |
     cms2.vm.box = "rhel5_test"
     cms2.vm.hostname = "nelscs2a"
